@@ -47,7 +47,7 @@ extern "C" {
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
 
-#define MAX_PARTICLES 50000
+#define MAX_PARTICLES 2000 
 #define GRAVITY 0.1
 #define rnd() (float)rand() / (float)RAND_MAX
 
