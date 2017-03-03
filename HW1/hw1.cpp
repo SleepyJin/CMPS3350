@@ -1,6 +1,6 @@
 //modified by: Jinxu Han	
 //date: Jan 26, 2017
-//purpose: lab1
+//purpose: homework1
 //
 //cs3350 Spring 2017 Lab-1
 //author: Gordon Griesel
@@ -47,8 +47,8 @@ extern "C" {
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
 
-#define MAX_PARTICLES 2000 
-#define GRAVITY 0.1
+#define MAX_PARTICLES 50000 
+#define GRAVITY 0.15
 #define rnd() (float)rand() / (float)RAND_MAX
 
 //X Windows variables
@@ -118,11 +118,6 @@ int main(void)
 	Game game;
 	game.n=0;
 
-	//declare a box shape
-//	game.box.width = 100;
-//	game.box.height = 10;
-//	game.box.center.x = 120 + 5*65;
-//	game.box.center.y = 500 - 5*60;
 
 	//start animation
 	while (!done) {
@@ -256,6 +251,10 @@ int check_keys(XEvent *e, Game *game)
 	//Was there input from the keyboard?
 	if (e->type == KeyPress) {
 		int key = XLookupKeysym(&e->xkey, 0);
+		if(key == XK_b) {
+		    game ->bubbler ^=1;
+		}
+		
 		if (key == XK_Escape) {
 			return 1;
 		}
@@ -388,7 +387,7 @@ void render(Game *game)
 	}
 
 
-
+/*
 	Rect r;
 	s= &game ->box[0];
 	r.left = s->center.x - s->width+ 50;
@@ -414,4 +413,5 @@ void render(Game *game)
 	r.left = s->center.x - s->width+ 50;
 	r.bot  = s->center.y - s->height;
 	ggprint8b(&r, 16, 0x0033FF, "Maintenance");
-}
+*/
+	}
