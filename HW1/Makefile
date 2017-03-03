@@ -4,7 +4,7 @@
 all: hw1
 
 hw1: hw1.cpp 
-	g++ hw1.cpp libggfonts.a  -Wall -ohw1 -lX11 -lGL -lGLU -lm -lrt
+	g++ hw1.cpp -I /opt/X11/include -L /usr/X11/lib libggfonts.a -Wall -ohw1 -lX11 -lGL -lGLU -lm 
 
 clean:
 	rm -f hw1
